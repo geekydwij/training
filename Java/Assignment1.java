@@ -1,3 +1,4 @@
+package Java;
 public class Assignment1 {
     public static class MediaItem{
         String title, media_type;
