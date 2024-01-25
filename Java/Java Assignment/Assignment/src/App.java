@@ -7,8 +7,7 @@ public class App {
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Data Structure Operations");
-            System.out.println("2. Other Operations");
-            System.out.println("3. Exit");
+            System.out.println("2. Exit");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -19,9 +18,6 @@ public class App {
                     Menu.executeDataStructureOperations(scanner);
                     break;
                 case 2:
-                    Menu.executeOtherOperations(scanner);
-                    break;
-                case 3:
                     System.out.println("Exiting program. Goodbye!");
                     scanner.close();
                     System.exit(0);

@@ -67,12 +67,6 @@ public class Menu {
         DataStructures.operateOnStack(new java.util.Stack<>());
     }
 
-    static void executeOtherOperations(Scanner scanner) {
-        // Add other operations here
-        System.out.println("Other operations can be added here.");
-        waitForEnter(scanner);
-    }
-
     private static void waitForEnter(Scanner scanner) {
         System.out.println("Press ENTER to continue...");
         scanner.nextLine();
