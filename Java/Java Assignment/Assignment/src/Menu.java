@@ -66,6 +66,11 @@ public class Menu {
         // Stack
         DataStructures.operateOnStack(new java.util.Stack<>());
     }
+    static void executeStreamMethods(Scanner scanner) {
+        // List
+        StreamAPI.streamMethods();
+        waitForEnter(scanner);
+    }
 
     private static void waitForEnter(Scanner scanner) {
         System.out.println("Press ENTER to continue...");
