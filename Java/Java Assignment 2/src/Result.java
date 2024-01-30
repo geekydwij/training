@@ -1,19 +1,30 @@
 
 import java.util.*;
-
 public class Result {
+    private int resultId;
     private Student student;
     private Assignment assignment;
-    private List<Question> questions;
-    private List<Answer> answers;
+    private Trainer trainer;
     private int score;
+    private String feedback;
+    private Date submissionDate;
 
-    public Result(Student student, Assignment assignment, List<Question> questions, List<Answer> answers, int score) {
+    public Result(int resultId, Student student, Assignment assignment, Trainer trainer, int score, String feedback, Date submissionDate) {
+        this.resultId = resultId;
         this.student = student;
         this.assignment = assignment;
-        this.questions = questions;
-        this.answers = answers;
+        this.trainer = trainer;
         this.score = score;
+        this.feedback = feedback;
+        this.submissionDate = submissionDate;
+    }
+
+    public int getResultId() {
+        return resultId;
+    }
+
+    public void setResultId(int resultId) {
+        this.resultId = resultId;
     }
 
     public Student getStudent() {
@@ -32,22 +43,29 @@ public class Result {
         this.assignment = assignment;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
+    public Trainer getTrainer() {
+        return trainer;
     }
 
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
+    public String getFeedback() {
+        return feedback;
     }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 
+    public Date getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(Date submissionDate) {
+        this.submissionDate = submissionDate;
+    }
     public int getScore() {
         return score;
     }

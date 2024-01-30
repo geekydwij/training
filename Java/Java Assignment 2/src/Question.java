@@ -3,17 +3,17 @@ import java.util.*;
 
 public class Question {
     private int questionId;
-    private List<Answer> answers;
+    private List<Answer> options;
     private String answerKey;
     private int score;
     private int techStackId;
     private int assignmentId;
 
     // Constructor
-    public Question(int questionId, List<Answer> answers, String answerKey, int score, int techStackId,
+    public Question(int questionId, List<Answer> options, String answerKey, int score, int techStackId,
             int assignmentId) {
         this.questionId = questionId;
-        this.answers = answers;
+        this.options = options;
         this.answerKey = answerKey;
         this.score = score;
         this.techStackId = techStackId;
@@ -25,8 +25,8 @@ public class Question {
         return questionId;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
+    public List<Answer> getoptions() {
+        return options;
     }
 
     public String getAnswerKey() {
@@ -49,8 +49,8 @@ public class Question {
         this.questionId = questionId;
     }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
+    public void setoptions(List<Answer> options) {
+        this.options = options;
     }
 
     public void setAnswerKey(String answerKey) {
@@ -76,7 +76,7 @@ public class Question {
         int result = 1;
         result = prime * result + questionId;
         result = prime * result + ((answerKey == null) ? 0 : answerKey.hashCode());
-        result = prime * result + ((answers == null) ? 0 : answers.hashCode());
+        result = prime * result + ((options == null) ? 0 : options.hashCode());
         result = prime * result + assignmentId;
         result = prime * result + score;
         result = prime * result + techStackId;
@@ -99,10 +99,10 @@ public class Question {
                 return false;
         } else if (!answerKey.equals(other.answerKey)) // If the answerKeys are not equal
             return false;
-        if (answers == null) { // If the answers is null
-            if (other.answers != null) // If the other answers is not null
+        if (options == null) { // If the options is null
+            if (other.options != null) // If the other options is not null
                 return false;
-        } else if (!answers.equals(other.answers)) // If the answers are not equal
+        } else if (!options.equals(other.options)) // If the options are not equal
             return false;
         if (assignmentId != other.assignmentId) // If the assignmentIds are not equal
             return false;
