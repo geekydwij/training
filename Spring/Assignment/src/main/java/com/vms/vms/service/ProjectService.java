@@ -1,2 +1,4 @@
-package com.vms.vms.service;public class ProjectService {
+package com.vms.vms.service;
+
+public class ProjectService {
 }

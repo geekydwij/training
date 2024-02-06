@@ -1,2 +1,4 @@
-package com.vms.vms.controller;public class ProjectContoller {
+package com.vms.vms.controller;
+
+public class ProjectContoller {
 }
