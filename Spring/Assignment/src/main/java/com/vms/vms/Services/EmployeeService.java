@@ -7,7 +7,6 @@ import com.vms.vms.Models.Project;
 import com.vms.vms.Repository.DepartmentRepository;
 import com.vms.vms.Repository.EmployeeRepository;
 import com.vms.vms.Repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,6 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final DepartmentRepository departmentRepository;
 
-    @Autowired
     public EmployeeService(ProjectRepository projectRepository, EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
         this.projectRepository = projectRepository;
         this.employeeRepository = employeeRepository;

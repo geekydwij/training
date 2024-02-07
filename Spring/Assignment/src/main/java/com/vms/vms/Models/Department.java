@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "Department")
 public class Department {
     @Id
@@ -18,23 +20,6 @@ public class Department {
     @JsonIgnore
     @OneToMany(mappedBy = "department")
     private List<Employee> employees=new ArrayList<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    // Constructors, getters, and setters
 }
 
 

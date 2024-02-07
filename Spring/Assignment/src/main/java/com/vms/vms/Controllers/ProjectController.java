@@ -5,12 +5,9 @@ import com.vms.vms.DTOs.ProjectDTO;
 import com.vms.vms.Models.Project;
 import com.vms.vms.Models.Status;
 import com.vms.vms.Services.ProjectService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/projects")
@@ -18,7 +15,6 @@ public class ProjectController {
 
     private final ProjectService projectService;
 
-    @Autowired
     public ProjectController(ProjectService projectService) {
         this.projectService = projectService;
     }

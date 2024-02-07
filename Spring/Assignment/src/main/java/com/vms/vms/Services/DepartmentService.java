@@ -5,7 +5,6 @@ import com.vms.vms.DTOs.DepartmentDTO;
 import com.vms.vms.Models.Department;
 import com.vms.vms.Models.Employee;
 import com.vms.vms.Repository.DepartmentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,6 @@ public class DepartmentService {
 
     private final DepartmentRepository departmentRepository;
 
-    @Autowired
     public DepartmentService(DepartmentRepository departmentRepository) {
         this.departmentRepository = departmentRepository;
     }
