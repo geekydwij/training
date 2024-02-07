@@ -1,13 +1,15 @@
-package com.vms.vms.repository;
+package com.vms.vms.Repository;
 
-import com.vms.vms.entity.Employee;
+import com.vms.vms.Models.Department;
+import com.vms.vms.Models.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-
-    @Query("SELECT e FROM Employee e WHERE e.department.id = ?1")
-    List<Employee> findByDepartmentId(Long departmentId);
+    List<Employee> findTop3ByOrderBySalaryDesc();
+    List<Employee> findByDepartmentOrderBySalaryDesc(Department d);
 }
+
