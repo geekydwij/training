@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/api")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -19,52 +19,52 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/createEmployee")
     public APIResponse<Employee> createEmployee(@RequestBody Employee employee) {
         return employeeService.createEmployee(employee);
     }
 
-    @PutMapping("{emp_id}/department/{dep_id}")
+    @PutMapping("/assignDepartmentByEmployeeId/{emp_id}/{dep_id}")
     public APIResponse<Employee> assignDepToEmployee(@PathVariable Long emp_id, @PathVariable Long dep_id) {
         return employeeService.assignDepToEmployee(emp_id, dep_id);
     }
 
-    @PutMapping("{emp_id}/project/{project_id}")
+    @PutMapping("/assignProjectByEmployeeId/{emp_id}/{project_id}")
     public APIResponse<Employee> assignProjectToEmployee(@PathVariable Long emp_id, @PathVariable Long project_id) {
         return employeeService.assignProjectToEmployee(emp_id, project_id);
     }
 
-    @PutMapping("/update/{employeeId}")
+    @PutMapping("/updateEmployeeById/{employeeId}")
     public APIResponse<Employee> updateEmployee(@PathVariable Long employeeId, @RequestBody Employee updatedEmployeeData) {
         return employeeService.updateEmployee(employeeId,updatedEmployeeData);
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getAllEmployee")
     public APIResponse<List<Employee>> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
-    @GetMapping("/get/{emp_id}")
+    @GetMapping("/getEmployeeById/{emp_id}")
     public APIResponse<Employee> getAnEmployee(@PathVariable Long emp_id) {
         return employeeService.getAnEmployee(emp_id);
     }
 
-    @GetMapping("/get/department/{emp_id}")
+    @GetMapping("/getEmployee/department/{emp_id}")
     public APIResponse<Department> getDeptEmployee(@PathVariable Long emp_id) {
         return employeeService.getDeptEmployee(emp_id);
     }
 
-    @GetMapping("/highest-salary")
+    @GetMapping("/getHighestSalaryEmployee")
     public APIResponse<List<Employee>> getEmployeesWithHighestSalary() {
         return employeeService.getEmployeesWithHighestSalary();
     }
 
-    @GetMapping("/second-highest-salary-by-department")
+    @GetMapping("/getSecondHighestSalaryHoldersByDepartment")
     public APIResponse<Map<String, Employee>> getSecondHighestSalaryHoldersByDepartment() {
         return employeeService.getSecondHighestSalaryHoldersByDepartment();
     }
 
-    @DeleteMapping("/delete/{employeeId}")
+    @DeleteMapping("/deleteEmployeeById/{employeeId}")
     public APIResponse<String> deleteEmployee(@PathVariable Long employeeId) {
         return employeeService.deleteEmployee(employeeId);
     }
